@@ -10,19 +10,19 @@ import org.lwjgl.*;
 import org.lwjgl.input.*;
 import org.lwjgl.opengl.*;
 
-public final class OpenGLEnv extends AbstractEnv {
-  private final OpenGLKeyboardAdapter keyboardAdapter;
-  private final OpenGLMouseAdapter mouseAdapter;
+public final class GLEnv extends AbstractEnv {
+  private final GLKeyboardAdapter keyboardAdapter;
+  private final GLMouseAdapter mouseAdapter;
   
   private int fps;
   
-  public OpenGLEnv( final Shell shell, final int fps ) {
+  public GLEnv( final Shell shell, final int fps ) {
     super( shell, fps );
     
     final Inputs inputs = shell.getInputs();
     
-    keyboardAdapter = new OpenGLKeyboardAdapter( inputs.keyboard );
-    mouseAdapter = new OpenGLMouseAdapter( inputs.mouse, inputs.mouseMotion, inputs.mouseWheel );
+    keyboardAdapter = new GLKeyboardAdapter( inputs.keyboard );
+    mouseAdapter = new GLMouseAdapter( inputs.mouse, inputs.mouseMotion, inputs.mouseWheel );
   }
   
   public static void init2D() {
@@ -86,7 +86,7 @@ public final class OpenGLEnv extends AbstractEnv {
   public void run() {
     shell.setRunning( true );
     
-    final OpenGLGraphics graphics = (OpenGLGraphics) shell;
+    final GLGraphics graphics = (GLGraphics) shell;
     graphics.initGL();
     
     long lastFrame = Sys.getTime();
@@ -136,7 +136,7 @@ public final class OpenGLEnv extends AbstractEnv {
     updateDaemon.setDaemon( true );
     updateDaemon.start();
     
-    final OpenGLGraphics graphics = (OpenGLGraphics) shell;
+    final GLGraphics graphics = (GLGraphics) shell;
     graphics.initGL();
     
     long lastFrame = Sys.getTime();

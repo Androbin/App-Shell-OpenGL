@@ -2,14 +2,14 @@ package de.androbin.shell.input;
 
 import static org.lwjgl.input.Mouse.*;
 
-public final class OpenGLMouseAdapter {
+public final class GLMouseAdapter {
   private final MouseInput mouseInput;
   private final MouseMotionInput mouseMotionInput;
   private final MouseWheelInput mouseWheelInput;
   
   private float mclicks;
   
-  public OpenGLMouseAdapter( final MouseInput mouseInput,
+  public GLMouseAdapter( final MouseInput mouseInput,
       final MouseMotionInput mouseMotionInput,
       final MouseWheelInput mouseWheelInput ) {
     this.mouseInput = mouseInput;

@@ -2,10 +2,10 @@ package de.androbin.shell.input;
 
 import static org.lwjgl.input.Keyboard.*;
 
-public final class OpenGLKeyboardAdapter {
+public final class GLKeyboardAdapter {
   private final KeyInput input;
   
-  public OpenGLKeyboardAdapter( final KeyInput input ) {
+  public GLKeyboardAdapter( final KeyInput input ) {
     this.input = input;
   }
   
